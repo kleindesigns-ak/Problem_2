@@ -89,5 +89,3 @@ int Zipcode::convertStringPostnetToIntegerZipcode() {
 string Zipcode::convertIntegerZipcodeToStringPostnet() {
     return std::string();
 }
-
-//test
