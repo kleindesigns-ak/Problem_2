@@ -7,13 +7,13 @@ int main(){
     // Comparison array == {7, 4, 2, 1, 0}
     Zipcode test("1"
                  "10100"
-                 "10010"
-                 "10000"
+                 "10100"
                  "01100"
-                 "01010"
+                 "00101"
+                 "00110"
                  "1");
     cout << endl;
-    cout << test.getPostnet() << endl << endl;
-    cout << test.getZipcode() << endl << endl;
+    cout << "Zipcode is " << test.getZipcode() << "." << endl;
+    cout << "Postnet Code is " << test.getPostnetCode() << "." << endl;
     return 0;
 }
