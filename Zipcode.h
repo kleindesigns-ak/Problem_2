@@ -25,3 +25,5 @@ private:
     void arrayPostToIntConversion(string *newZipArray);
     void zipcodeArrayToIntConversion(int zipArray[], int zipcode);
 };
+
+//test
