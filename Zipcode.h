@@ -3,27 +3,6 @@
 #include <string>
 using namespace std;
 
-/*
-class Zipcode {
-public:
-    string getPostnet();
-    int getZipcode();
-    void setPostnet(const string& postnet);
-    void setZipcode(int zipcode);
-    string convertIntegerZipcodeToStringPostnet();
-private:
-    string tempPostnetCode;
-    string postnetCode;
-    int zipcode;
-    int zipArray[5] = {0, 0, 0, 0, 0};
-    string newZipArray[5] = {"", "", "", "", ""};
-    void postRemoveBoundingMarkers(string& postnetCode);
-    void postnetDivideToFiveDigitArray(string *newZipArray, string& postnetCode);
-    void arrayPostToIntConversion(string *newZipArray);
-    void zipcodeArrayToIntConversion(int zipArray[], int zipcode);
-};
- */
-
 
 class Zipcode{
 public:
