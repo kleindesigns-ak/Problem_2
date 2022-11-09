@@ -13,6 +13,9 @@ public:
         // Getters / Setters
     int getZipcode();
     string getPostnetCode();
+
+    void setZipcode(int zipcode);
+    void setPostnetCode(string postnet);
 private:
         // Private Vars
     int zipcode;

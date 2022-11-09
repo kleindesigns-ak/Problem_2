@@ -22,12 +22,22 @@ Zipcode::Zipcode(string postnetCode) {
 
 /// ~~~~~~~~~~~~~~~~ GETTER AND SETTER FUNCTIONS ~~~~~~~~~~~~~~~~~~~~~~~
 
+    // Getters
 int Zipcode::getZipcode() {
     return zipcode;
 }
 
 string Zipcode::getPostnetCode() {
     return convertIntegerZipcodeToStringPostnet(zipcode);
+}
+
+    // Setters
+void Zipcode::setZipcode(int zipcode) {
+    this->zipcode = zipcode;
+}
+
+void Zipcode::setPostnetCode(string postnet) {
+    this->zipcode = convertStringPostnetToIntegerZipcode(postnet);
 }
 
 /// ~~~~~~~~~~~~~~~~~~~~~ HELPER FUNCTIONS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -84,53 +94,51 @@ string Zipcode::convertIntegerZipcodeToStringPostnet(int &zipcode) {
     return postnetCode;
 }
 
-void Zipcode::intZipToStringZip(int &zipcode, string &postnetCode) {
-    postnetCode = to_string(zipcode);
-}
-
-void Zipcode::stringZipToPostnetCode(string &postnetCode) {
-    // First bounding 1 of postnet code
-    string temp = "1";
-
-    // Add integers in converted postnet format one digit at a time
-    for (int stringZipDigit = 0; stringZipDigit < 5; stringZipDigit++) {
-        //switch int values for postnet equivalents
-        switch (stoi(postnetCode.substr(stringZipDigit, 1))) {
-            case 1:
-                temp.append("00011");
-                break;
-            case 2:
-                temp.append("00101");
-                break;
-            case 3:
-                temp.append("00110");
-                break;
-            case 4:
-                temp.append("01001");
-                break;
-            case 5:
-                temp.append("01010");
-                break;
-            case 6:
-                temp.append("01100");
-                break;
-            case 7:
-                temp.append("10001");
-                break;
-            case 8:
-                temp.append("10010");
-                break;
-            case 9:
-                temp.append("10100");
-                break;
-            case 0:
-                temp.append("11000");
-                break;
-        }
-
+    void Zipcode::intZipToStringZip(int &zipcode, string &postnetCode) {
+        postnetCode = to_string(zipcode);
     }
 
-    temp.append("1");
+    void Zipcode::stringZipToPostnetCode(string &postnetCode) {
+        // First bounding 1 of postnet code
+        string temp = "1";
 
-    postnetCode = temp;
-}
+        // Add integers in converted postnet format one digit at a time
+        for (int stringZipDigit = 0; stringZipDigit < 5; stringZipDigit++) {
+            //switch int values for postnet equivalents
+            switch (stoi(postnetCode.substr(stringZipDigit, 1))) {
+                case 1:
+                    temp.append("00011");
+                    break;
+                case 2:
+                    temp.append("00101");
+                    break;
+                case 3:
+                    temp.append("00110");
+                    break;
+                case 4:
+                    temp.append("01001");
+                    break;
+                case 5:
+                    temp.append("01010");
+                    break;
+                case 6:
+                    temp.append("01100");
+                    break;
+                case 7:
+                    temp.append("10001");
+                    break;
+                case 8:
+                    temp.append("10010");
+                    break;
+                case 9:
+                    temp.append("10100");
+                    break;
+                case 0:
+                    temp.append("11000");
+                    break;
+            }
+
+        }
+        temp.append("1");
+        postnetCode = temp;
+    }
